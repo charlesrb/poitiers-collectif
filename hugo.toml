@@ -1,4 +1,6 @@
 baseURL = "https://charlesrb.github.io/poitiers-collectif/"
+relativeURLs = true
+canonifyURLs = true
 languageCode = "fr-FR"
 title = "Poitiers Collectif"
 
