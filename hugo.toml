@@ -76,3 +76,7 @@ title = "Poitiers Collectif"
 home = ["HTML", "RSS", "JSON"]
 section = ["HTML", "RSS"]
 page = ["HTML"]
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
