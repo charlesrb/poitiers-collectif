@@ -1,6 +1,5 @@
 baseURL = "https://charlesrb.github.io/poitiers-collectif/"
-relativeURLs = true
-canonifyURLs = true
+
 languageCode = "fr-FR"
 title = "Poitiers Collectif"
 
@@ -73,8 +72,8 @@ title = "Poitiers Collectif"
       unsafe = true
 
 [outputs]
-home = ["HTML", "RSS", "JSON"]
-section = ["HTML", "RSS"]
+home = ["HTML", "JSON"]
+section = ["HTML"]
 page = ["HTML"]
 
 [caches]
