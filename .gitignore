@@ -10,4 +10,6 @@ public/
 # Hugo
 .hugo_build.lock
 
-.temp-migration
+temp-migration
+
+wp-to-hugo-migrator.py
