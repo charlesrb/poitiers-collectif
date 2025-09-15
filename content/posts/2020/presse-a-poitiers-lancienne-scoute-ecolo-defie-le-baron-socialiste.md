@@ -1,0 +1,13 @@
+---
+author: Poitiers Collectif
+categories:
+- Presse - Médias
+date: '2020-06-17T09:43:47'
+draft: false
+lastmod: '2020-06-17T09:43:47'
+slug: presse-a-poitiers-lancienne-scoute-ecolo-defie-le-baron-socialiste
+tags: []
+title: '[Presse] A Poitiers, l’ancienne scoute écolo défie le baron socialiste'
+---
+
+"A la veille du second tour des municipales, le 28 juin, « l’Obs » se penche sur les villes qui peuvent basculer et les candidats qui peuvent créer la surprise. Aujourd’hui, Poitiers. La jeune écologiste Léonore Moncond’huy peut-elle faire tomber le maire PS Alain Claeys ?" ![Image](https://focus.nouvelobs.com/2020/06/15/0/0/1200/600/633/306/75/0/d044e8e_9gG4_9MYj2HCUgMkdC9VPWue.jpg) Extraits : "Elle vient de fêter ses 30 ans et pourrait créer la surprise le 28 juin. Léonore Moncond’- huy n’est pas une candidate comme les autres. A 11 ans, elle devient scoute. C’est dans cette famille de l’éducation populaire qu’elle a grandi, découvert l’engagement et le sens des responsabilités. C’est là aussi qu’elle est devenue écologiste." "Si la jeune femme [...] est une candidate singulière, c’est d’abord parce qu’elle a été désignée tête de liste de « Poitiers collectif » par « une élection sans candidat », explique-t-elle. Ce collectif citoyen veut « renouveler les générations et les pratiques politiques ». " "Arrivée deuxième le 15 mars avec 23,8 % des voix derrière le maire sortant et baron socialiste Alain Claeys (28,2 %), l’ancienne scoute, que les écolos sont venus chercher en 2015 pour devenir conseillère régionale, a le vent en poupe, d’autant qu’une autre liste citoyenne a fait un peu de moins de 10 %. Avec ses colistiers, Moncond’huy n’a pas envisagé de fusionner avec la liste de Claeys : « Ce qu’on incarne est vraiment différent, on est le monde d’après. A Poitiers, le PS est une institution. Alain Claeys achève son deuxième mandat, il était directeur de cabinet du maire en 1977. C’est un système verrouillé, le PS n’a plus le logiciel adapté. Sur l’écologie, ça ne va pas assez loin. » "Elle rêve d’une « écologie ouverte, très ouverte, qui accueille ceux qui font un pas sincère vers l’écologie ». Proche de l’Archipel citoyen à Toulouse, celle qui affrontera aussi un candidat LREM le 28 juin rêve surtout de conquérir la mairie de Poitiers, et faire basculer un bastion qui est socialiste depuis 1977". L'article est à lire [à ce lien](https://www.nouvelobs.com/elections-municipales-2020/20200616.OBS30099/a-poitiers-l-ancienne-scoute-ecolo-defie-le-baron-socialiste.html). Pour les non-abonnés, n'hésitez pas à nous demander l'article, à l'adresse contact@poitierscollectif.fr !

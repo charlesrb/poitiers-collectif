@@ -1,0 +1,46 @@
+<header class="header">
+    <div class="header-container">
+        <a href="{{ "/" | relURL }}" class="logo">
+            <div class="logo-icon">PC</div>
+            <span>Poitiers Collectif</span>
+        </a>
+        
+        <div class="search-modern">
+            <div id="search"></div>
+        </div>
+        
+        <nav class="nav">
+            <a href="{{ "/posts" | relURL }}" class="nav-link">Actualités</a>
+            <a href="{{ "/events" | relURL }}" class="nav-link">Agenda</a>
+            <a href="{{ "/participer" | relURL }}" class="nav-link">Participer</a>
+            <a href="{{ "/a-propos" | relURL }}" class="nav-link">À propos</a>
+            <a href="{{ "/contact" | relURL }}" class="nav-link">Contact</a>
+            <button class="theme-toggle" onclick="toggleTheme()" title="Changer de thème">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </nav>
+        
+        <!-- Menu mobile -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <!-- Menu mobile -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-search">
+            <div id="mobile-search"></div>
+        </div>
+        <a href="{{ "/posts" | relURL }}">Actualités</a>
+        <a href="{{ "/events" | relURL }}">Agenda</a>
+        <a href="{{ "/participer" | relURL }}">Participer</a>
+        <a href="{{ "/a-propos" | relURL }}">À propos</a>
+        <a href="{{ "/contact" | relURL }}">Contact</a>
+        <button class="theme-toggle mobile" onclick="toggleTheme()">
+            <span>Thème sombre</span>
+            <span id="mobile-theme-icon">🌙</span>
+        </button>
+    </nav>
+</header>

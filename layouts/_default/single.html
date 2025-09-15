@@ -1,0 +1,233 @@
+{{ define "main" }}
+
+<!-- Hero moderne avec gradient -->
+<section class="article-hero">
+    <div class="hero-container">
+        <div class="breadcrumb">
+            <a href="{{ "/" | relURL }}">Accueil</a>
+            <span class="breadcrumb-separator">→</span>
+            <a href="{{ "/posts" | relURL }}">Actualités</a>
+            <span class="breadcrumb-separator">→</span>
+            <span>{{ .Title }}</span>
+        </div>
+        
+        <div class="article-meta-modern">
+            <div class="meta-item">
+                <span>📅</span>
+                {{ if hugo.IsServer }}
+                <span data-tina-field="date">{{ .Date.Format "2 janvier 2006" }}</span>
+                {{ else }}
+                <span>{{ .Date.Format "2 janvier 2006" }}</span>
+                {{ end }}
+            </div>
+            {{ if .Params.categories }}
+                {{ range .Params.categories }}
+                <div class="meta-item">
+                    <span>🏷️</span>
+                    {{ if hugo.IsServer }}
+                    <span data-tina-field="categories">{{ . }}</span>
+                    {{ else }}
+                    <span>{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            {{ end }}
+            <div class="meta-item">
+                <span>⏱️</span>
+                <span>{{ math.Round (div (countwords .Content) 200.0) }} min de lecture</span>
+            </div>
+            {{ if .Params.author }}
+            <div class="meta-item">
+                <span>✍️</span>
+                {{ if hugo.IsServer }}
+                <span data-tina-field="author">{{ .Params.author }}</span>
+                {{ else }}
+                <span>{{ .Params.author }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        
+        {{ if hugo.IsServer }}
+        <h1 class="article-title-modern" data-tina-field="title">{{ .Title }}</h1>
+        {{ else }}
+        <h1 class="article-title-modern">{{ .Title }}</h1>
+        {{ end }}
+        
+        {{ if .Summary }}
+        <p class="article-excerpt-modern">{{ .Summary }}</p>
+        {{ end }}
+    </div>
+</section>
+
+<!-- Contenu moderne -->
+<div class="content-wrapper">
+    <article class="article-content-modern">
+        <div class="content-inner">
+            {{ if hugo.IsServer }}
+            <div data-tina-field="body">{{ .Content }}</div>
+            {{ else }}
+            {{ .Content }}
+            {{ end }}
+            
+            <!-- Tags -->
+            {{ if .Params.tags }}
+            <div class="tags-container">
+                {{ range .Params.tags }}
+                {{ if hugo.IsServer }}
+                <span class="tag-modern" data-tina-field="tags">{{ . }}</span>
+                {{ else }}
+                <span class="tag-modern">{{ . }}</span>
+                {{ end }}
+                {{ end }}
+            </div>
+            {{ end }}
+            
+            <!-- Call to action -->
+            <div class="cta-card">
+                <h3>🗣️ Participez à la co-construction !</h3>
+                <p>Rejoignez-nous pour enrichir ces propositions et construire ensemble l'avenir de Poitiers.</p>
+                <a href="{{ "/participer" | relURL }}" class="btn-modern">
+                    <span>Je m'implique</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Sidebar moderne -->
+    <aside class="sidebar-modern">
+        <!-- Articles liés -->
+        {{ $related := .Site.RegularPages.Related . | first 3 }}
+        {{ if $related }}
+        <div class="sidebar-card">
+            <div class="sidebar-card-header">
+                <h3 class="sidebar-card-title">
+                    <span>📰</span>
+                    <span>Articles connexes</span>
+                </h3>
+            </div>
+            <div class="sidebar-card-content">
+                <div class="related-list">
+                    {{ range $related }}
+                    <div class="related-item">
+                        <a href="{{ .Permalink }}" class="related-link">{{ .Title }}</a>
+                        <div class="related-date">{{ .Date.Format "2 janvier 2006" }}</div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+
+        <!-- Articles récents -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-header">
+                <h3 class="sidebar-card-title">
+                    <span>📰</span>
+                    <span>Articles récents</span>
+                </h3>
+            </div>
+            <div class="sidebar-card-content">
+                <div class="related-list">
+                    {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
+                    <div class="related-item">
+                        <a href="{{ .Permalink }}" class="related-link">{{ .Title }}</a>
+                        <div class="related-date">{{ .Date.Format "2 janvier 2006" }}</div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Événements à venir -->
+        {{ $events := where .Site.RegularPages "Type" "events" }}
+        {{ if $events }}
+        <div class="sidebar-card">
+            <div class="sidebar-card-header">
+                <h3 class="sidebar-card-title">
+                    <span>📅</span>
+                    <span>Prochains rendez-vous</span>
+                </h3>
+            </div>
+            <div class="sidebar-card-content">
+                {{ range first 3 $events }}
+                <div class="event-card-modern">
+                    <div class="event-date-modern">{{ .Date.Format "2 JAN • 15H04" }}</div>
+                    <div class="event-title-modern">{{ .Title }}</div>
+                    {{ if .Params.location }}
+                    <div class="event-location">📍 {{ .Params.location }}</div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+
+        <!-- Call to action participatif -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-header">
+                <h3 class="sidebar-card-title">
+                    <span>🎯</span>
+                    <span>Agir ensemble</span>
+                </h3>
+            </div>
+            <div class="sidebar-card-content">
+                <p style="color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.6; margin-bottom: 1rem;">
+                    Vous avez des idées pour améliorer Poitiers ? Votre expertise du terrain nous intéresse !
+                </p>
+                <a href="{{ "/participer" | relURL }}" class="btn-modern" style="width: 100%; justify-content: center;">
+                    <span>Nous rejoindre</span>
+                    <span>✨</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="sidebar-card">
+            <div class="sidebar-card-header">
+                <h3 class="sidebar-card-title">
+                    <span>📬</span>
+                    <span>Restez informé</span>
+                </h3>
+            </div>
+            <div class="sidebar-card-content">
+                <p style="color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.6; margin-bottom: 1rem;">
+                    Recevez nos actualités et les invitations aux événements.
+                </p>
+                <form style="display: flex; flex-direction: column; gap: 0.75rem;" action="#" method="post">
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="votre@email.fr" 
+                        required
+                        style="padding: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius); font-size: var(--font-size-sm); outline: none; transition: border-color 0.2s;"
+                    >
+                    <button type="submit" class="btn-modern" style="width: 100%; justify-content: center;">
+                        <span>S'abonner</span>
+                        <span>📨</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- Navigation entre articles -->
+<div class="article-nav-modern">
+    {{ if .PrevInSection }}
+    <a href="{{ .PrevInSection.Permalink }}" class="nav-card nav-prev">
+        <span class="nav-direction">← Article précédent</span>
+        <h4 class="nav-title">{{ .PrevInSection.Title }}</h4>
+    </a>
+    {{ end }}
+    
+    {{ if .NextInSection }}
+    <a href="{{ .NextInSection.Permalink }}" class="nav-card nav-next">
+        <span class="nav-direction">Article suivant →</span>
+        <h4 class="nav-title">{{ .NextInSection.Title }}</h4>
+    </a>
+    {{ end }}
+</div>
+
+{{ end }}

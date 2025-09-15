@@ -1,0 +1,73 @@
+baseURL = "https://poitierscollectif.fr"  # URL finale
+languageCode = "fr-FR"
+title = "Poitiers Collectif"
+
+[params]
+  env = "development"
+
+  description = "L'alternative ouverte et démocratique pour Poitiers"
+  
+  # Configuration Homepage
+  hero_badge = "🚀 Cap sur 2026 - L'aventure continue"
+  hero_title_part1 = "Construisons ensemble"
+  hero_title_part2 = "l'avenir de Poitiers"
+  hero_description = "Une démarche citoyenne, ouverte et démocratique qui place l'écologie, la justice sociale et la participation de toutes et tous au cœur de notre projet pour Poitiers."
+  
+  # Call-to-Actions
+  cta_primary_text = "Je participe"
+  cta_primary_link = "/participer"
+  final_cta_title = "Rejoignez le mouvement"
+  final_cta_description = "Que vous soyez habitant, acteur associatif, économique ou sportif, participez à la construction d'un projet démocratique, juste et écologique !"
+  final_cta_primary_text = "Rejoindre un groupe de travail"
+  final_cta_primary_link = "/participer"
+  final_cta_secondary_text = "S'inscrire à la newsletter"
+  final_cta_secondary_link = "/newsletter"
+  
+  # Valeurs (optionnel - sinon valeurs par défaut)
+  [[params.values]]
+    class = "ecology"
+    icon = "🍀"
+    title = "Écologie"
+    description = "Nous montrerons l'exemple pour réduire notre impact climatique."
+    
+  [[params.values]]
+    class = "social"
+    icon = "🤝"
+    title = "Justice sociale"
+    description = "Poitiers, ville de résistance humaniste et solidaire."
+    
+  [[params.values]]
+    class = "democracy"
+    icon = "💬"
+    title = "Démocratie"
+    description = "Donner une place aux habitants dans la vie démocratique."
+    
+  [[params.values]]
+    class = "development"
+    icon = "🏦"
+    title = "Développement local"
+    description = "Un territoire en transition écologique et sociale."
+  
+  # Stats (optionnel)
+  [[params.stats]]
+    number = "2020"
+    label = "Année de notre victoire"
+    
+  [[params.stats]]
+    number = "350"
+    label = "Projets citoyens soutenus"
+    
+  [[params.stats]]
+    number = "15"
+    label = "Groupes de travail actifs"
+    
+  [[params.stats]]
+    number = "2026"
+    label = "Cap sur l'avenir"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+      

@@ -1,0 +1,5 @@
+{{ if .Site.IsServer }}
+<div data-tina-field="{{ .Get 0 }}">{{ .Inner }}</div>
+{{ else }}
+{{ .Inner }}
+{{ end }}

@@ -1,0 +1,254 @@
+{{ define "main" }}
+
+<!-- Hero Section Ultra-Moderne -->
+<section class="hero-modern">
+    <div class="hero-container">
+        <div class="hero-badge">
+            <span>🚀</span>
+            <span>{{ .Site.Params.hero_badge | default "Cap sur 2026 - L'aventure continue" }}</span>
+        </div>
+        
+        <h1 class="hero-title">
+            {{ .Site.Params.hero_title_part1 | default "Construisons ensemble" }}<br>
+            <span style="background: linear-gradient(135deg, #ead53e 0%, #f7e73d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">{{ .Site.Params.hero_title_part2 | default "l'avenir de Poitiers" }}</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+            {{ .Site.Params.hero_description | default "Une démarche citoyenne, ouverte et démocratique qui place l'écologie, la justice sociale et la participation de toutes et tous au cœur de notre projet pour Poitiers." }}
+        </p>
+        
+        <div class="hero-cta">
+            <a href="{{ .Site.Params.cta_primary_link | default "/participer" }}" class="btn-primary">
+                <span>{{ .Site.Params.cta_primary_text | default "Je participe" }}</span>
+                <span>✨</span>
+            </a>
+            <a href="#valeurs" class="btn-secondary">
+                <span>Découvrir nos valeurs</span>
+                <span>↓</span>
+            </a>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <span>Découvrez notre vision</span>
+        <span>↓</span>
+    </div>
+</section>
+
+<!-- Section Valeurs -->
+<section class="values-section" id="valeurs">
+    <div class="values-container">
+        <h2 class="section-title">{{ .Site.Params.values_title | default "Nos valeurs cardinales" }}</h2>
+        <p class="section-subtitle">
+            {{ .Site.Params.values_subtitle | default "Quatre piliers fondamentaux guident notre action politique et notre vision pour une Poitiers plus juste, plus verte et plus démocratique." }}
+        </p>
+        
+        <div class="values-grid">
+            {{ range .Site.Params.values }}
+            <div class="value-card {{ .class }}">
+                <span class="value-icon">{{ .icon }}</span>
+                <h3 class="value-title">{{ .title }}</h3>
+                <p class="value-description">{{ .description }}</p>
+            </div>
+            {{ else }}
+            <!-- Valeurs par défaut si non configurées -->
+            <div class="value-card ecology">
+                <span class="value-icon">🍀</span>
+                <h3 class="value-title">Écologie</h3>
+                <p class="value-description">
+                    Nous montrerons l'exemple pour réduire notre impact sur le changement climatique. 
+                    Nous agirons pour adapter notre ville aux changements à venir et redonner à la nature sa place en ville.
+                </p>
+            </div>
+            
+            <div class="value-card social">
+                <span class="value-icon">🤝</span>
+                <h3 class="value-title">Justice sociale</h3>
+                <p class="value-description">
+                    Poitiers, ville de résistance humaniste où la préservation des liens sociaux est une priorité. 
+                    Nos politiques sont guidées par un impératif de solidarité et de justice sociale.
+                </p>
+            </div>
+            
+            <div class="value-card democracy">
+                <span class="value-icon">💬</span>
+                <h3 class="value-title">Démocratie</h3>
+                <p class="value-description">
+                    Donner une place aux habitants dans la vie démocratique locale, construire une confiance nouvelle 
+                    avec les élus, et inventer un fonctionnement plus coopératif.
+                </p>
+            </div>
+            
+            <div class="value-card development">
+                <span class="value-icon">🏦</span>
+                <h3 class="value-title">Développement local</h3>
+                <p class="value-description">
+                    Faire de Poitiers et Grand Poitiers un territoire en transition vers un projet de développement 
+                    durable, inclusif et respectueux de notre environnement.
+                </p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Section Stats -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stats-grid">
+            {{ range .Site.Params.stats }}
+            <div class="stat-item">
+                <span class="stat-number" data-target="{{ .number }}">0</span>
+                <span class="stat-label">{{ .label }}</span>
+            </div>
+            {{ else }}
+            <!-- Stats par défaut -->
+            <div class="stat-item">
+                <span class="stat-number" data-target="2020">0</span>
+                <span class="stat-label">Année de notre victoire</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="350">0</span>
+                <span class="stat-label">Projets citoyens soutenus</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="15">0</span>
+                <span class="stat-label">Groupes de travail actifs</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="2026">0</span>
+                <span class="stat-label">Cap sur l'avenir</span>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Section Actualités -->
+<section class="news-section" id="actualites">
+    <div class="news-container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Dernières actualités</h2>
+                <p class="section-subtitle">Suivez l'avancée de nos projets et nos prises de position</p>
+            </div>
+            <a href="{{ "/posts" | relURL }}" class="btn-link">
+                <span>Toutes les actualités</span>
+                <span>→</span>
+            </a>
+        </div>
+        
+        <div class="news-grid">
+            {{ range first 3 (where .Site.RegularPages "Type" "posts") }}
+            <article class="news-card">
+                <div class="news-image">
+                    {{ if .Params.icon }}{{ .Params.icon }}{{ else }}📰{{ end }}
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        {{ if .Params.categories }}
+                            {{ range first 1 .Params.categories }}
+                            <span class="news-tag">{{ . }}</span>
+                            {{ end }}
+                        {{ end }}
+                        <span>{{ .Date.Format "2 janvier 2006" }}</span>
+                    </div>
+                    <h3 class="news-title">
+                        <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    </h3>
+                    <p class="news-excerpt">
+                        {{ if .Summary }}{{ .Summary }}{{ else }}{{ .Content | truncate 120 }}{{ end }}
+                    </p>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Section Événements -->
+<section class="events-section" id="agenda">
+    <div class="events-container">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">Prochains événements</h2>
+                <p class="section-subtitle">Participez à la construction collective de notre projet</p>
+            </div>
+            <a href="{{ "/events" | relURL }}" class="btn-link">
+                <span>Voir tout l'agenda</span>
+                <span>→</span>
+            </a>
+        </div>
+        
+        <div class="events-grid">
+            {{ $events := where .Site.RegularPages "Type" "events" }}
+            {{ range first 4 $events }}
+            <div class="event-card">
+                <div class="event-date">{{ .Date.Format "2 JAN • 15H04" }}</div>
+                <h3 class="event-title">{{ .Title }}</h3>
+                {{ if .Params.location }}
+                <div class="event-location">
+                    <span>📍</span>
+                    <span>{{ .Params.location }}</span>
+                </div>
+                {{ end }}
+            </div>
+            {{ else }}
+            <!-- Événements exemples si aucun n'existe -->
+            <div class="event-card">
+                <div class="event-date">21 MAI • 20H00</div>
+                <h3 class="event-title">Plénière citoyenne - Mobilité et transports</h3>
+                <div class="event-location">
+                    <span>📍</span>
+                    <span>Maison des Projets, Centre-ville</span>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-date">12 JUIN • 19H30</div>
+                <h3 class="event-title">Atelier participatif - Aménagements cyclables</h3>
+                <div class="event-location">
+                    <span>📍</span>
+                    <span>Salle des Fêtes, Quartier Nord</span>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-date">10 JUILLET • 20H00</div>
+                <h3 class="event-title">Grande plénière - Présentation des propositions</h3>
+                <div class="event-location">
+                    <span>📍</span>
+                    <span>Verrière de l'Îlot Tison</span>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Section Call-to-Action -->
+<section class="cta-section" id="participer">
+    <div class="cta-container">
+        <h2 class="cta-title">{{ .Site.Params.final_cta_title | default "Rejoignez le mouvement" }}</h2>
+        <p class="cta-description">
+            {{ .Site.Params.final_cta_description | default "Que vous soyez habitant, acteur associatif, économique ou sportif, simplement curieux de notre démarche, participez à la construction d'un projet démocratique, juste socialement et écologique pour Poitiers !" }}
+        </p>
+        <div class="cta-actions">
+            <a href="{{ .Site.Params.final_cta_primary_link | default "/participer" }}" class="btn-dark">
+                <span>{{ .Site.Params.final_cta_primary_text | default "Rejoindre un groupe de travail" }}</span>
+                <span>→</span>
+            </a>
+            <a href="{{ .Site.Params.final_cta_secondary_link | default "/newsletter" }}" class="btn-secondary">
+                <span>{{ .Site.Params.final_cta_secondary_text | default "S'inscrire à la newsletter" }}</span>
+                <span>📨</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+{{ end }}
+
+{{ define "head" }}
+<!-- CSS spécifique homepage -->
+<link rel="stylesheet" href="{{ "css/homepage.css" | relURL }}">
+{{ end }}

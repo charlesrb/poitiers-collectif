@@ -1,0 +1,214 @@
+# .pages.yml - Configuration PagesCMS pour Poitiers Collectif
+settings:
+  title: "Poitiers Collectif - Admin"
+  description: "Interface d'administration pour le site Poitiers Collectif"
+  logo: "/images/logo.png"
+
+# Configuration des médias
+media:
+  input: static/images
+  output: /images
+
+# Collections de contenu
+content:
+  # Articles/Posts
+  - name: articles
+    label: "Articles"
+    description: "Articles et actualités de Poitiers Collectif"
+    type: collection
+    path: content/posts
+    format: md
+    create: true
+    delete: true
+    fields:
+      - name: title
+        label: "Titre"
+        type: string
+        required: true
+        
+      - name: author
+        label: "Auteur"
+        type: select
+        required: true
+        options:
+          - "Poitiers Collectif"
+          - "Équipe municipale"
+          - "Contributeur externe"
+        default: "Poitiers Collectif"
+        
+      - name: date
+        label: "Date de publication"
+        type: datetime
+        required: true
+        format: "YYYY-MM-DDTHH:mm:ss"
+        
+      - name: lastmod
+        label: "Dernière modification"
+        type: datetime
+        format: "YYYY-MM-DDTHH:mm:ss"
+        
+      - name: slug
+        label: "URL (slug)"
+        type: string
+        description: "URL personnalisée pour l'article (optionnel)"
+        
+      - name: categories
+        label: "Catégories"
+        type: list
+        options:
+          - "Actualités"
+          - "Politique"
+          - "Culture" 
+          - "Environnement"
+          - "Social"
+          - "Économie"
+          - "Urbanisme"
+          - "Transport"
+          - "Éducation"
+          - "Sport"
+        
+      - name: tags
+        label: "Tags"
+        type: list
+        description: "Mots-clés libres pour l'article"
+        
+      - name: draft
+        label: "Brouillon"
+        type: boolean
+        default: false
+        description: "Article en cours de rédaction"
+        
+      - name: featured_image
+        label: "Image mise en avant"
+        type: image
+        description: "Image principale de l'article"
+        
+      - name: summary
+        label: "Résumé"
+        type: text
+        description: "Court résumé affiché dans les listes d'articles"
+        
+      - name: body
+        label: "Contenu"
+        type: markdown
+        required: true
+
+  # Événements
+  - name: evenements
+    label: "Événements"
+    description: "Événements et rendez-vous"
+    type: collection
+    path: content/evenements
+    format: md
+    create: true
+    delete: true
+    fields:
+      - name: title
+        label: "Titre de l'événement"
+        type: string
+        required: true
+        
+      - name: date_event
+        label: "Date de l'événement"
+        type: datetime
+        required: true
+        format: "YYYY-MM-DDTHH:mm:ss"
+        
+      - name: date_end
+        label: "Date de fin"
+        type: datetime
+        format: "YYYY-MM-DDTHH:mm:ss"
+        
+      - name: location
+        label: "Lieu"
+        type: string
+        
+      - name: address
+        label: "Adresse complète"
+        type: text
+        
+      - name: organizer
+        label: "Organisateur"
+        type: string
+        default: "Poitiers Collectif"
+        
+      - name: categories
+        label: "Type d'événement"
+        type: select
+        options:
+          - "Réunion publique"
+          - "Conseil municipal"
+          - "Manifestation"
+          - "Formation"
+          - "Atelier participatif"
+          - "Conférence"
+          - "Événement culturel"
+        
+      - name: registration_required
+        label: "Inscription obligatoire"
+        type: boolean
+        default: false
+        
+      - name: registration_link
+        label: "Lien d'inscription"
+        type: string
+        
+      - name: image
+        label: "Image de l'événement"
+        type: image
+        
+      - name: description
+        label: "Description courte"
+        type: text
+        description: "Description affichée dans la liste des événements"
+        
+      - name: body
+        label: "Description détaillée"
+        type: markdown
+
+  # Pages statiques
+  - name: pages
+    label: "Pages"
+    description: "Pages statiques du site"
+    type: collection
+    path: content
+    format: md
+    create: true
+    delete: false
+    filter: "*.md"
+    fields:
+      - name: title
+        label: "Titre de la page"
+        type: string
+        required: true
+        
+      - name: description
+        label: "Description"
+        type: text
+        description: "Description pour le SEO"
+        
+      - name: layout
+        label: "Template"
+        type: select
+        options:
+          - "default"
+          - "page"
+          - "contact"
+          - "about"
+        default: "page"
+        
+      - name: menu
+        label: "Menu principal"
+        type: boolean
+        default: false
+        description: "Afficher dans le menu principal"
+        
+      - name: weight
+        label: "Ordre dans le menu"
+        type: number
+        description: "Ordre d'affichage (plus petit = plus haut)"
+        
+      - name: body
+        label: "Contenu"
+        type: markdown
+        required: true

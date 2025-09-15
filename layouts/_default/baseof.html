@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "fr" }}">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {{ block "title" . }}
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    {{ end }}
+    
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ "css/modern-style.css" | relURL }}">
+    
+    <!-- Pagefind CSS -->
+    <link href="{{ "/search/pagefind-ui.css" | relURL }}" rel="stylesheet">
+
+    {{ if .IsHome }}
+<link rel="stylesheet" href="{{ "css/homepage.css" | relURL }}">
+{{ end }}
+
+    
+    <!-- Meta tags pour les réseaux sociaux -->
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    
+    {{ block "head" . }}{{ end }}
+    {{ if hugo.IsServer }}
+<script id="__tina" data-api="/admin/api/gql">
+(function() {
+  var script = document.createElement('script');
+  script.src = '/admin/__tina.js';
+  document.head.appendChild(script);
+})()
+</script>
+{{ end }}
+</head>
+<body>
+    {{ block "header" . }}{{ partial "modern-header.html" . }}{{ end }}
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ block "footer" . }}{{ partial "modern-footer.html" . }}{{ end }}
+    
+    <!-- Pagefind Script -->
+    <script src="{{ "/search/pagefind-ui.js" | relURL }}" type="text/javascript"></script>
+    <script>
+        // Initialiser la recherche
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ 
+                element: "#search",
+                showSubResults: true,
+                showEmptyFilters: false,
+                resetStyles: false,
+                translations: {
+                    placeholder: "Rechercher dans le site...",
+                    clear_search: "Effacer",
+                    load_more: "Voir plus de résultats",
+                    search_label: "Recherche",
+                    filters_label: "Filtres",
+                    zero_results: "Aucun résultat pour [SEARCH_TERM]",
+                    many_results: "[COUNT] résultats pour [SEARCH_TERM]",
+                    one_result: "1 résultat pour [SEARCH_TERM]",
+                    alt_search: "Aucun résultat pour [SEARCH_TERM]. Voici les résultats pour [DIFFERENT_TERM]",
+                    search_suggestion: "Essayez de chercher [DIFFERENT_TERM]",
+                    searching: "Recherche de [SEARCH_TERM]..."
+                }
+            });
+        });
+    </script>
+    
+    <!-- Scripts modernes -->
+    <script src="{{ "js/modern-theme.js" | relURL }}"></script>
+    {{ if .IsHome }}
+<script src="{{ "js/homepage.js" | relURL }}"></script>
+{{ end }}
+</body>
+</html>

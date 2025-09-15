@@ -1,0 +1,25 @@
+---
+author: Poitiers Collectif
+categories:
+- Actualités
+- Communiqués
+date: '2021-06-29T16:02:03'
+draft: false
+lastmod: '2021-06-29T16:38:13'
+slug: conseil-municipal-du-28-juin-leonore-moncondhuy
+tags:
+- conseil municipal
+- élections
+title: '[Conseil Municipal du 28 juin] Léonore Moncond''huy : "La démocratie ne sera
+  jamais plus forte qu''en étant vivante, investie par les citoyens"'
+---
+
+_[Episode 1 : Les conclusions que nous tirons des dernières élections]_ _Lundi 28 juin s'est tenu le dernier conseil municipal avant l'été. De quoi a-t-il été question ? Quels enjeux pour les Poitevines et les Poitevins ? Cette semaine, nous revenons en texte et en image sur ce conseil_.  _Premier article de cette série, et en guise d'ouverture : Léonore Moncond'huy est revenue sur l'abstention lors des élections départementales et régionales, et sur les conclusions à en tirer sur la relation entre élu.e.s et citoyen.ne.s._ ![Image](https://elus.poitierscollectif.fr/wp-content/uploads/2021/06/E4-1hBOXIAcvD2K-300x169.jpg) "Il y a un an, l’équipe de Poitiers Collectif arrivait à la tête de la Mairie, à l’issue d’une victoire qui a démontré que, par le vote, il était possible de déjouer les pronostics et donc que par le vote, on pouvait agir. Les élections d’hier, comme celles d’il y a un an, sont marquées par un très fort taux d’abstention. Une majorité des citoyens et citoyennes a choisi de ne pas se déplacer. Cela m’interpelle, cela nous interpelle particulièrement, nous qui portons un projet dont l’ambition première est de redonner confiance en la politique. 
+
+## Une abstention qui doit nous pousser à réinterroger les pratiques politiques
+
+S’habituer à des taux de participation aussi bas serait extrêmement dangereux pour la démocratie. La démocratie nous semble un acquis ; mais si les citoyens, si les citoyennes ne se l’approprient plus, qui la défendra ? Déjà, nous nous habituons peu à peu à une démocratie dégradée. Un Parlement de moins en moins respecté dans son rôle, les dernières séquences parlementaires le démontrent. Plus proche de nous, pour les dernières élections, des bureaux de vote souvent tenus a minima, en acceptant un assesseur seulement. Une distribution complètement aléatoire des professions de foi, qui n’ont pas été reçues par de nombreux citoyens, qui ne disposaient pas de l’information leur permettant de choisir. La désinvolture avec laquelle ces problématiques sont traitées est un signal extrêmement négatif envoyé aux citoyens quant à l’importance à accorder à la démocratie, qui serait un enjeu externalisable, secondaire… Les phrases convenues sur l’ « abstention préoccupante » lors des soirées électorales, font bonne figure, mais semblent bien vite oubliées lorsqu’il s’agit d’oser questionner ses pratiques politiques. Or, **pour avoir de la valeur aux yeux des citoyens, la démocratie doit avoir de la valeur aux yeux de celles et ceux qui gouvernent, ou aspirent à gouverner**. 
+
+## Un lien de confiance à reconstruire avec les citoyen.ne.s
+
+Nous, qui gouvernons aussi la Ville de Poitiers, nous croyons fermement en la démocratie locale, et en le renouvellement des modalités de participation citoyenne, avec une appétence pour les propositions permettant de faire vivre une démocratie plus directe. Les budgets participatifs ; les concertations entre acteurs ; les Maisons de quartier ; les temps d’échange, tout simplement, entre élus et citoyens : ce sont autant d’espaces, de méthodes, qui permettent de lutter contre le sentiment d’impuissance, et de rendre à chacun, chacune sa capacité d’être acteur de sa vie, de sa ville. C’est avec ce projet de participation citoyenne permanente, d’éducation populaire globale, que nous faisons le pari à Poitiers de redonner confiance en le pouvoir d’agir citoyen, à toutes les échelles. Mais cela ne doit pas nous exonérer de redonner du sens à la démocratie représentative, de lui redonner du corps. Voter n’est pas tout à fait un acte de participation comme les autres : c’est, aujourd’hui et dans notre système républicain, le fondement sur lequel repose la légitimité des élus. **Mais pour avoir de la valeur aux yeux des élus, la démocratie doit aussi avoir de la valeur aux yeux des citoyens**. La démocratie ne sera jamais mieux défendue, elle ne sera jamais plus forte, qu’en étant vivante et investie par les citoyens. Voter n’aura jamais autant de poids, que si le bulletin engage vraiment les élus, et que les citoyens sont là pour le leur rappeler. Et en ce sens, je remercie les services de la Ville de Poitiers, et les assesseurs et assesseuses bénévoles, qui se sont engagés ces deux dernières semaines, pour faire vivre l’exercice démocratique important des élections départementales et régionales. C’est ainsi un lien de confiance, autour d’un attachement partagé à la démocratie, qu’il s’agit aujourd’hui de reconstruire, entre élus, citoyens, et oserais-je dire médias. Et ce lien de confiance s’inscrit forcément dans le long terme : c’est le pari de l’équipe Poitiers Collectif, et la première de nos priorités."

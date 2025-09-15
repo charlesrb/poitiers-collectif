@@ -1,0 +1,55 @@
+<footer class="footer-modern">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Poitiers Collectif</h4>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem; line-height: 1.6;">
+                L'alternative ouverte et démocratique pour Poitiers
+            </p>
+            <p style="color: var(--accent); font-weight: 600; font-size: var(--font-size-lg);">
+                Cap sur 2026 !
+            </p>
+            <div style="margin-top: 1.5rem;">
+                <p style="color: rgba(255, 255, 255, 0.6); font-size: var(--font-size-sm);">
+                    🍀 Écologie • 🤝 Justice sociale • 💬 Démocratie • 🏦 Développement local
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Participer</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href="{{ "/participer" | relURL }}">Rejoindre un groupe de travail</a>
+                <a href="{{ "/newsletter" | relURL }}">S'inscrire à la newsletter</a>
+                <a href="{{ "/events" | relURL }}">Événements à venir</a>
+                <a href="{{ "/proposer-projet" | relURL }}">Proposer un projet</a>
+                <a href="{{ "/benevole" | relURL }}">Devenir bénévole</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Ressources</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href="{{ "/programme" | relURL }}">Programme 2020-2026</a>
+                <a href="{{ "/realisations" | relURL }}">Nos réalisations</a>
+                <a href="{{ "/conseils" | relURL }}">Comptes-rendus de conseils</a>
+                <a href="{{ "/budget-participatif" | relURL }}">Budget participatif</a>
+                <a href="{{ "/transparence" | relURL }}">Transparence financière</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Contact & Légal</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <a href="mailto:contact@poitierscollectif.fr">contact@poitierscollectif.fr</a>
+                <a href="{{ "/reseaux-sociaux" | relURL }}">Réseaux sociaux</a>
+                <a href="{{ "/mentions-legales" | relURL }}">Mentions légales</a>
+                <a href="{{ "/confidentialite" | relURL }}">Politique de confidentialité</a>
+                <a href="{{ "/accessibilite" | relURL }}">Accessibilité</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© {{ now.Format "2006" }} Poitiers Collectif • Tous droits réservés • Site développé de manière éco-responsable</p>
+    </div>
+</footer>

@@ -1,0 +1,44 @@
+<header class="header">
+    <div class="header-content">
+        <a href="{{ "/" | relURL }}" class="logo">POITIERS COLLECTIF</a>
+        
+        <!-- Barre de recherche -->
+        <div class="search-container">
+            <div id="search"></div>
+        </div>
+        
+        <nav class="nav">
+            <a href="{{ "/posts" | relURL }}">Actualités</a>
+            <a href="{{ "/events" | relURL }}">Agenda</a>
+            <a href="{{ "/participer" | relURL }}">Participer</a>
+            <a href="{{ "/contact" | relURL }}">Contact</a>
+        </nav>
+        
+        <!-- Menu mobile -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <!-- Menu mobile -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-search">
+            <div id="mobile-search"></div>
+        </div>
+        <a href="{{ "/posts" | relURL }}">Actualités</a>
+        <a href="{{ "/events" | relURL }}">Agenda</a>
+        <a href="{{ "/participer" | relURL }}">Participer</a>
+        <a href="{{ "/contact" | relURL }}">Contact</a>
+    </nav>
+</header>
+
+<script>
+function toggleMobileMenu() {
+    const mobileNav = document.getElementById('mobileNav');
+    const btn = document.querySelector('.mobile-menu-btn');
+    mobileNav.classList.toggle('active');
+    btn.classList.toggle('active');
+}
+</script>

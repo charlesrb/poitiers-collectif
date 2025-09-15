@@ -1,0 +1,14 @@
+---
+author: Poitiers Collectif
+categories:
+- Actualités
+date: '2019-04-16T00:31:09'
+draft: false
+lastmod: '2019-04-16T00:47:27'
+slug: se-reconcilier-avec-le-vivant-retour-sur-notre-table-ronde
+tags:
+- Biodiversité
+title: '"Se réconcilier avec le vivant" - Retour sur notre table ronde'
+---
+
+![Image](http://poitierscollectif.fr/wp-content/uploads/2019/04/Nicolas-Thierry.jpg) ? "On a perdu une forme d'humilité face à la nature, qui nous fait croire que l'on est supérieurs. Or, pour construire un monde en harmonie, il faut considérer le vivant comme un tout, dont nous faisons partie. Et nous, humains, devons nous réconcilier avec le vivant" La table ronde avec [Nicolas THIERRY](https://www.facebook.com/nicolas.thierry.14?__tn__=K-R&eid=ARCJntz5UB5XLdVvleX-nnMJCXIlyTVRjO-Ap5yeTlb2AdUrAC7lmPLu7uLYoRp-ACT_ZDtVOy_77WYU&fref=mentions&__xts__%5B0%5D=68.ARD7QDzmdb6Mj6KIzcAwRkKaIg1y8LD-fyaim9XoaMrQ1NlgqnnhhoLW-r1r38bnIqiDgWRPjRnwgns_iA06HZ0AmW7Mv_amc4rYWYgEGgAyA5r1xa8mnkC39yiG1U4RT_NfbQSn1yUDac-7u36Sm02T_AwE7eFDY4IXP2vRKZwH9ACEUKHPMbcAHY3PcpTtwANMxnogVMFPgilANowj2rBwu2hikNVt9QuX7-yjgnIPHkUEHf8HHyOX9QKdBjMVvoSnt6sTAGMlCx1RZaXUqV3V1waIKi-65pvS7r9N1IhhEVMV421uvp9wGdt12qjsv1Y), organisée par notre groupe Biodiversité à l'occasion de la présentation de son livre [Se réconcilier avec le vivant](https://www.ruedelechiquier.net/essais/214-se-r%C3%A9concilier-avec-le-vivant.html), fut un succès ! Riches échanges, et nombreuses pistes pour agir localement - "la bonne échelle pour tenter de faire basculer le modèle culturel", selon notre intervenant : re-végétaliser les villes, y créer des espaces de respiration, qui seront nécessaires face au dérèglement climatique. Se servir au maximum des écoles comme lieux d'exemplarité, de la restauration collective comme levier de changement. "L'ensemble d'un programme peut refléter l'attention portée au vivant, ça lui donnera même de la cohérence". "Les principes essentiels pour nous mettre en mouvement ? "De l'audace, de l'inventivité politique... Et du courage !" Un appel combatif à "polliniser les bonnes idées", selon sa jolie formule qui exprime un message au coeur des échanges : l'action de chacun.e, dans les sphères individuelles, associatives, politique, est indispensable pour changer de regard sur le vivant, et mettre l'urgence de la préservation de nos écosystèmes au coeur des enjeux de société actuels. Merci à [La Bruyère Vagabonde](https://www.facebook.com/La-Bruyère-Vagabonde-276081655815084/?__tn__=K-R-R&eid=ARAp2-z5K-1-0noFicBwtr602q8zxQf-XPHbmUmtILVf4QcF8LHSV0w48mpLqZ8wrXVwGNoTGQd39Eq8&fref=mentions&__xts__%5B0%5D=68.ARBVHk7b0Wtfe1UVcfs-lcljxB7pbyQOOo59U6X-QdMCQZYYu68nLFLxLJHVEHLzaLbm-_bAiCxplmDGbZE8lHpccvWxfid3psjE6ydVPdp3EkROhvVyOUU9VIFj68MQe97w2kmIlYHIEo8Dymqcnipp1a2JkpT9WCkG5VR_mKOKCHdEKgtpt6cze19EhOaXy3cv3VFXtS7VApVdFg-8fxjE2NwFEM-KOdMDk_39c1O5sQzAOMvsPoxHi3VvD3gYiuv5335kUedYuArVVsHg7fgB09K8aVbYNr7HkqXQ2Jiy474_hTCWMFpO8Ai-zR0EHk0) pour ce nouveau partenariat !
