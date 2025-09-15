@@ -5,7 +5,7 @@ languageCode = "fr-FR"
 title = "Poitiers Collectif"
 
 [params]
-  env = "development"
+  env = "production"
 
   description = "L'alternative ouverte et démocratique pour Poitiers"
   
