@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 static/images/
 public/
 node_modules/
 .DS_Store
 *.log
 .hugo_build.lock
+=======
+node_modulesnode_modules/
+public/
+.hugo_build.lock
+.DS_Store
+*.log
+>>>>>>> 92d0ccf (Setup Hugo)
