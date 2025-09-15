@@ -11,4 +11,14 @@ public/
 .hugo_build.lock
 .DS_Store
 *.log
+<<<<<<< HEAD
 >>>>>>> 92d0ccf (Setup Hugo)
+=======
+public/
+node_modules/
+*.log
+public/
+static/images/*.jpg
+static/images/*.png
+.DS_Store
+>>>>>>> 6e14682 (Remove large files and configure gitignore)
