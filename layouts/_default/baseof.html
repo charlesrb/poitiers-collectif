@@ -34,15 +34,7 @@
     <meta property="og:url" content="{{ .Permalink }}">
     
     {{ block "head" . }}{{ end }}
-    {{ if hugo.IsServer }}
-<script id="__tina" data-api="/admin/api/gql">
-(function() {
-  var script = document.createElement('script');
-  script.src = '/admin/__tina.js';
-  document.head.appendChild(script);
-})()
-</script>
-{{ end }}
+    
 </head>
 <body>
     {{ block "header" . }}{{ partial "modern-header.html" . }}{{ end }}
