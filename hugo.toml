@@ -72,4 +72,7 @@ title = "Poitiers Collectif"
     [markup.goldmark.renderer]
       unsafe = true
 
-      
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+section = ["HTML", "RSS"]
+page = ["HTML"]
