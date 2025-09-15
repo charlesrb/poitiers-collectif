@@ -32,9 +32,7 @@ content:
         type: select
         required: true
         options:
-          - "Poitiers Collectif"
-          - "Équipe municipale"
-          - "Contributeur externe"
+          values : ["Poitiers Collectif", "Équipe municipale", "Contributeur externe"]
         default: "Poitiers Collectif"
         
       - name: date
