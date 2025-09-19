@@ -1,0 +1,256 @@
+{{ define "main" }}
+
+
+    <!-- Hero -->
+<section class="articles-hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ .Title | default "Actualités" }}</h1>
+            <p class="hero-subtitle">{{ .Description | default "Suivez l'actualité de Poitiers Collectif et découvrez nos propositions pour une ville plus verte, plus juste et plus démocratique." }}</p>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Filtres -->
+    <div class="filters-section">
+        <div class="filters-header">
+            <h2 class="filters-title">📰 Parcourir les articles</h2>
+            <div class="view-toggle">
+                <button class="view-btn active" onclick="toggleView('grid')">🔲 Grille</button>
+                <button class="view-btn" onclick="toggleView('list')">📋 Liste</button>
+            </div>
+        </div>
+        <div class="filters-content">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="Rechercher un article...">
+            </div>
+            <select class="filter-select" id="categoryFilter">
+                <option value="">Toutes les catégories</option>
+                {{ range .Site.Taxonomies.categories }}
+                <option value="{{ .Page.Title | lower }}">{{ .Page.Title }}</option>
+                {{ end }}
+            </select>
+            <select class="sort-select" id="sortSelect">
+                <option value="recent">Plus récent</option>
+                <option value="ancien">Plus ancien</option>
+                <option value="alphabetical">Alphabétique</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <span><strong>{{ len .Pages }}</strong> articles publiés</span>
+        <span>Dernière mise à jour : <strong>{{ now.Format "2 janvier 2006" }}</strong></span>
+        <span><strong>{{ len .Site.Taxonomies.categories }}</strong> catégories</span>
+    </div>
+
+    <!-- Articles Grid -->
+    <div id="articles-container" class="articles-grid">
+        {{ range .Paginator.Pages }}
+        <article class="article-card" data-category="{{ if .Params.categories }}{{ index .Params.categories 0 | lower }}{{ end }}" data-date="{{ .Date.Unix }}">
+            <div class="article-image">
+                {{ if .Params.image }}
+                <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                {{ else }}
+                    {{ $category := "" }}
+                    {{ if .Params.categories }}
+                        {{ $category = index .Params.categories 0 | lower }}
+                    {{ end }}
+                    {{ if eq $category "urbanisme" }}🏙️
+                    {{ else if eq $category "environnement" }}🌱
+                    {{ else if eq $category "democratie" }}🗳️
+                    {{ else if eq $category "social" }}🏠
+                    {{ else if eq $category "mobilite" }}🚌
+                    {{ else if eq $category "culture" }}🎭
+                    {{ else if eq $category "actualites" }}📰
+                    {{ else if eq $category "compte-rendu" }}📋
+                    {{ else }}📰{{ end }}
+                {{ end }}
+            </div>
+            <div class="article-content">
+                <div class="article-meta">
+                    {{ if .Params.categories }}
+                    <a href="{{ "/categories/" | relURL }}{{ index .Params.categories 0 | urlize }}" class="article-category">{{ index .Params.categories 0 }}</a>
+                    {{ end }}
+                    <span class="article-date">📅 {{ .Date.Format "2 janvier 2006" }}</span>
+                    <span class="article-read-time">⏱️ {{ math.Round (div (countwords .Content) 200.0) }} min</span>
+                </div>
+                <h3 class="article-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h3>
+                <p class="article-excerpt">
+                    {{ if .Summary }}
+                        {{ .Summary }}
+                    {{ else if .Description }}
+                        {{ .Description }}
+                    {{ else }}
+                        {{ .Content | plainify | truncate 150 }}
+                    {{ end }}
+                </p>
+                {{ if .Params.tags }}
+                <div class="article-tags">
+                    {{ range first 3 .Params.tags }}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="article-tag">{{ . }}</a>
+                    {{ end }}
+                    {{ if gt (len .Params.tags) 3 }}
+                    <span class="article-tag">+{{ sub (len .Params.tags) 3 }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                <a href="{{ .Permalink }}" class="read-more">
+                    <span>Lire la suite</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </article>
+        {{ end }}
+        
+        <!-- Message si aucun article -->
+        {{ if eq (len .Paginator.Pages) 0 }}
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-secondary);">
+            <h3>Aucun article trouvé</h3>
+            <p>Il n'y a pas encore d'articles dans cette section.</p>
+        </div>
+        {{ end }}
+    </div>
+
+    <!-- Pagination Hugo -->
+    {{ if gt .Paginator.TotalPages 1 }}
+    <div class="pagination">
+        {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.Prev.URL }}" rel="prev">← Précédent</a>
+        {{ else }}
+        <span class="disabled">← Précédent</span>
+        {{ end }}
+
+        {{ $pag := .Paginator }}
+        {{ $window := 2 }}
+        {{ $start := math.Max 1 (sub $pag.PageNumber $window) }}
+        {{ $end := math.Min $pag.TotalPages (add $pag.PageNumber $window) }}
+
+        {{ if gt $start 1 }}
+        <a href="{{ (index $pag.Pagers 0).URL }}">1</a>
+        {{ if gt $start 2 }}
+        <span>...</span>
+        {{ end }}
+        {{ end }}
+
+        {{ range seq $start $end }}
+        {{ if eq . $pag.PageNumber }}
+        <span class="current">{{ . }}</span>
+        {{ else }}
+        <a href="{{ (index $pag.Pagers (sub . 1)).URL }}">{{ . }}</a>
+        {{ end }}
+        {{ end }}
+
+        {{ if lt $end $pag.TotalPages }}
+        {{ if lt $end (sub $pag.TotalPages 1) }}
+        <span>...</span>
+        {{ end }}
+        <a href="{{ (index $pag.Pagers (sub $pag.TotalPages 1)).URL }}">{{ $pag.TotalPages }}</a>
+        {{ end }}
+
+        {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}" rel="next">Suivant →</a>
+        {{ else }}
+        <span class="disabled">Suivant →</span>
+        {{ end }}
+    </div>
+    {{ end }}
+
+        <!-- Newsletter CTA -->
+        <div class="newsletter-cta">
+            <h3>📬 Restez informé</h3>
+            <p>Recevez nos derniers articles et analyses directement dans votre boîte mail</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="votre@email.fr" required>
+                <button type="submit" class="newsletter-btn">S'abonner</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleView(viewType) {
+            const container = document.getElementById('articles-container');
+            const gridBtn = document.querySelector('.view-btn:first-child');
+            const listBtn = document.querySelector('.view-btn:last-child');
+            const articles = document.querySelectorAll('.article-card');
+
+            if (viewType === 'grid') {
+                container.className = 'articles-grid';
+                gridBtn.classList.add('active');
+                listBtn.classList.remove('active');
+                articles.forEach(article => article.classList.remove('list-view'));
+            } else {
+                container.className = 'articles-list';
+                listBtn.classList.add('active');
+                gridBtn.classList.remove('active');
+                articles.forEach(article => article.classList.add('list-view'));
+            }
+        }
+
+        // Fonction de recherche simple
+        document.querySelector('.search-input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const articles = document.querySelectorAll('.article-card');
+            
+            articles.forEach(article => {
+                const title = article.querySelector('.article-title').textContent.toLowerCase();
+                const excerpt = article.querySelector('.article-excerpt').textContent.toLowerCase();
+                const tags = Array.from(article.querySelectorAll('.article-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || tags.includes(searchTerm)) {
+                    article.style.display = '';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+
+        // Filtre par catégorie
+        document.querySelector('.filter-select').addEventListener('change', function(e) {
+            const selectedCategory = e.target.value.toLowerCase();
+            const articles = document.querySelectorAll('.article-card');
+            
+            articles.forEach(article => {
+                const category = article.querySelector('.article-category').textContent.toLowerCase();
+                
+                if (!selectedCategory || category.includes(selectedCategory)) {
+                    article.style.display = '';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les cartes d'articles
+        document.addEventListener('DOMContentLoaded', function() {
+            const articles = document.querySelectorAll('.article-card');
+            
+            articles.forEach((article, index) => {
+                article.style.opacity = '0';
+                article.style.transform = 'translateY(30px)';
+                article.style.transition = `all 0.6s ease-out ${index * 0.1}s`;
+                observer.observe(article);
+            });
+        });
+    </script>
+{{ end }}

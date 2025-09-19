@@ -163,3 +163,8 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+
+
+// Recherche et filtres
+// (le code JavaScript que j'ai fourni précédemment)

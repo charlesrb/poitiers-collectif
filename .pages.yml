@@ -17,9 +17,7 @@ content:
     description: "Articles et actualités de Poitiers Collectif"
     type: collection
     path: content/posts
-    format: md
-    create: true
-    delete: true
+    format: yaml-frontmatter
 
     fields:
       - name: title
@@ -32,21 +30,21 @@ content:
         type: select
         required: true
         options:
-          - "Poitiers Collectif"
-          - "Équipe municipale"
-          - "Contributeur externe"
+          values : ["Poitiers Collectif", "Équipe municipale", "Contributeur externe"]
         default: "Poitiers Collectif"
         
       - name: date
         label: "Date de publication"
-        type: datetime
+        type: date
         required: true
-        format: "YYYY-MM-DDTHH:mm:ss"
+        options: 
+          format: dd-MM-yyyy
         
       - name: lastmod
         label: "Dernière modification"
-        type: datetime
-        format: "YYYY-MM-DDTHH:mm:ss"
+        type: date
+        options: 
+          format: dd-MM-yyyy
         
       - name: slug
         label: "URL (slug)"
@@ -56,22 +54,13 @@ content:
       - name: categories
         label: "Catégories"
         type: select
-        multiple: true
         options:
-          - "Actualités"
-          - "Politique"
-          - "Culture" 
-          - "Environnement"
-          - "Social"
-          - "Économie"
-          - "Urbanisme"
-          - "Transport"
-          - "Éducation"
-          - "Sport"
+          multiple: true
+          values : ["Actualités", "Politique"]
         
       - name: tags
         label: "Tags"
-        type: list
+        type: string
         description: "Mots-clés libres pour l'article"
         
       - name: draft
@@ -92,7 +81,7 @@ content:
         
       - name: body
         label: "Contenu"
-        type: markdown
+        type: rich-text
         required: true
 
   # Événements
@@ -101,9 +90,7 @@ content:
     description: "Événements et rendez-vous"
     type: collection
     path: content/evenements
-    format: md
-    create: true
-    delete: true
+    format: yaml-frontmatter
     fields:
       - name: title
         label: "Titre de l'événement"
@@ -112,14 +99,16 @@ content:
         
       - name: date_event
         label: "Date de l'événement"
-        type: datetime
+        type: date
         required: true
-        format: "YYYY-MM-DDTHH:mm:ss"
+        options: 
+          format: dd-MM-yyyy
         
       - name: date_end
         label: "Date de fin"
-        type: datetime
-        format: "YYYY-MM-DDTHH:mm:ss"
+        type: date
+        options: 
+          format: dd-MM-yyyy
         
       - name: location
         label: "Lieu"
@@ -138,13 +127,8 @@ content:
         label: "Type d'événement"
         type: select
         options:
-          - "Réunion publique"
-          - "Conseil municipal"
-          - "Manifestation"
-          - "Formation"
-          - "Atelier participatif"
-          - "Conférence"
-          - "Événement culturel"
+          multiple: true
+          values : ["Réunion publique", "Conseil municipal"]
         
       - name: registration_required
         label: "Inscription obligatoire"
@@ -166,7 +150,7 @@ content:
         
       - name: body
         label: "Description détaillée"
-        type: markdown
+        type: rich-text
 
   # Pages statiques
   - name: pages
@@ -174,10 +158,7 @@ content:
     description: "Pages statiques du site"
     type: collection
     path: content
-    format: md
-    create: true
-    delete: false
-    filter: "*.md"
+    format: yaml-frontmatter
     fields:
       - name: title
         label: "Titre de la page"
@@ -193,10 +174,8 @@ content:
         label: "Template"
         type: select
         options:
-          - "default"
-          - "page"
-          - "contact"
-          - "about"
+          multiple: true
+          values : ["default", "page"]
         default: "page"
         
       - name: menu
@@ -212,5 +191,5 @@ content:
         
       - name: body
         label: "Contenu"
-        type: markdown
+        type: yaml-frontmatter
         required: true
