@@ -8,4 +8,4 @@ draft: false
 featured_image: /images/CleanShot 2025-08-31 at 22.52.14@2x.png
 summary: Résumé
 ---
-Ceci est le contenu
+**Ceci est le contenu**
