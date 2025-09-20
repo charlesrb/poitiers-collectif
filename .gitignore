@@ -13,3 +13,9 @@ public/
 temp-migration
 
 wp-to-hugo-migrator.py
+
+# Tina
+.env
+.tina/__generated__
+admin/
+node_modules/

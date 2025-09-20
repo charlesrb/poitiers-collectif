@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@tinacms/auth": "^1.1.0",
+    "@tinacms/cli": "^1.10.3"
+  },
+  "scripts": {
+    "dev": "tinacms dev -c \"hugo server -D\"",
+    "build": "tinacms build && hugo --minify",
+    "tinacms": "tinacms dev",
+    "hugo": "hugo server -D"
+  }
+}
