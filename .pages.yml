@@ -38,13 +38,13 @@ content:
         type: date
         required: true
         options: 
-          format: dd-MM-yyyy
+          format: YYYY-MM-DDThh:mm
         
       - name: lastmod
         label: "Dernière modification"
         type: date
         options: 
-          format: dd-MM-yyyy
+          format: YYYY-MM-DDThh:mm
         
       - name: slug
         label: "URL (slug)"
