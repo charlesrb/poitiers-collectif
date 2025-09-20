@@ -78,3 +78,8 @@ page = ["HTML"]
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+[params.tina]
+enabled = true
+
+staticDir = ["static", "admin"]
