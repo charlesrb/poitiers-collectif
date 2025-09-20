@@ -19,3 +19,4 @@ wp-to-hugo-migrator.py
 .tina/__generated__
 admin/
 node_modules/
+node_modules

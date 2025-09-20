@@ -1,12 +1,19 @@
 {
-  "dependencies": {
-    "@tinacms/auth": "^1.1.0",
-    "@tinacms/cli": "^1.10.3"
-  },
+  "name": "poitiers-collectif",
+  "type": "module",
   "scripts": {
     "dev": "tinacms dev -c \"hugo server -D\"",
-    "build": "tinacms build && hugo --minify",
-    "tinacms": "tinacms dev",
-    "hugo": "hugo server -D"
+    "build": "tinacms build && hugo"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.27.1",
+    "@tinacms/cli": "^1.10.3",
+    "@types/node": "^24.5.2",
+    "graphql": "^16.11.0",
+    "lightningcss": "^1.30.1"
+  },
+  "dependencies": {
+    "graphql-ws": "^6.0.6",
+    "tinacms": "^2.8.3"
   }
 }
