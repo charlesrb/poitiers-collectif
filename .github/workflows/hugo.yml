@@ -21,8 +21,11 @@ jobs:
       DART_SASS_VERSION: 1.92.1
       GO_VERSION: 1.25.1
       HUGO_VERSION: 0.150.0
-      NODE_VERSION: 22.18.0
+      NODE_VERSION: 18.19.0  # Changé vers Node 18 pour éviter les erreurs ESM
       TZ: Europe/Oslo
+      # Variables Tina disponibles pour tout le job
+      TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -69,6 +72,9 @@ jobs:
       - name: Configure Git
         run: |
           git config core.quotepath false
+      # Build TinaCMS AVANT Hugo
+      - name: Build TinaCMS
+        run: npx tinacms build
       - name: Cache restore
         id: cache-restore
         uses: actions/cache/restore@v4
@@ -94,11 +100,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-      - name: Build TinaCMS
-        env:
-          TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
-          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-        run: npx tinacms build
   deploy:
     environment:
       name: github-pages
