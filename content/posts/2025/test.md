@@ -1,11 +1,10 @@
 ---
-date: '2025-09-13T00:00:00.000Z'
+title: Gros test de titre
+author: Poitiers Collectif
+date: 20-09-2025
 slug: test
-author: Charles
-draft: false
 categories:
-  - Popol
-title: Test de titre
+  - Actualités
+draft: false
 ---
-
 Test de content
